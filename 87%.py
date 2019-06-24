@@ -1,18 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # (87%) 학습 360개, 검사 15개, 컨볼루션 + 다층 신경망, MFCC 40개.ipynb
 # 음소 하나 당 MFCC는 40개의 벡터로, 총 18개 프레임
 # 음소를 아에이오우 순서로 섞어서 375세트의 한 집합으로 만듬
 # 이 중 앞의 360개는 훈련 데이터, 나머지 15개는 검사 데이터로 활용
 # 4개의 컨볼루션 신경망과 2개의 멀티 레이어로 구성
-
-
-# In[2]:
-
 
 import librosa
 import numpy as np
@@ -70,8 +60,8 @@ for k in range (75):
     print ('All SIze after reshape', np.shape(Temp_Array))
     # Temp_Array 리스트에 360개씩 추가한다.
 
-###########################################################################################
-###########################################################################################
+
+    
 
 for i in range (75) : # 학습 순서에 맞게 정답 레이블들을 작성하는 구문
     VALID_Data.extend(Alpha)
@@ -88,7 +78,6 @@ print ('INPUT_Data의 크기', np.shape (INPUT_Data))
 print ('VALID_Data의 크기 ', np.shape (VALID_Data))
 
 
-# In[3]:
 
 
 INPUT_Data = np.reshape(INPUT_Data, (-1, 720))
@@ -111,7 +100,7 @@ print ('INPUT_Data의 크기', np.shape (ValidInputData))
 print ('VALID_Data의 크기 ', np.shape (ValidLabelData))
 
 
-# In[4]:
+
 
 
 import librosa
@@ -155,14 +144,9 @@ Pooling4 = tf.nn.max_pool (Activation4, ksize = [1, 2, 2, 1], strides = [1, 2, 2
 print ("컨볼루션 4층에서 풀링 사이즈", Pooling4)
 
 
-# In[16]:
-
 
 # All Layer, three convolution acculate
 # Convolution Exit, Next to Fully Connected Layer
-
-##########################################################################################
-##########################################################################################
 
 POOLING3_With_Flat = tf.reshape(Pooling3, [-1, 3*5*80]) # 컨볼루션 망을 지나온 Pooling을 쫙 펼친다.
 FullyConnectedWeight1  = tf.Variable (tf.truncated_normal (shape = [3*5*80, 1200], stddev = 0.1))
@@ -175,14 +159,12 @@ FullyConnectedBias2 = tf.Variable (tf.truncated_normal (shape = [5], stddev = 0.
 Hypothesis = tf.matmul(FullyConnectedActivation1, FullyConnectedWeight2) + FullyConnectedBias2
 # Fully Connected 2층 레이어에서 연산
 
-##########################################################################################
-##########################################################################################
-
 Loss = tf.reduce_mean (tf.nn.softmax_cross_entropy_with_logits (labels = Y, logits = Hypothesis))
 Train = tf.train.AdamOptimizer(0.003).minimize(Loss)
 
 CorrectPrediction = tf.equal (tf.argmax (Hypothesis, 1), tf.argmax(Y, 1))
 Accuracy = tf.reduce_mean (tf.cast (CorrectPrediction, tf.float32))
+
 
 with tf.Session() as sess :
     print ("............ Go!")
@@ -196,10 +178,3 @@ with tf.Session() as sess :
             print ('학습 데이터로 계산한 손실도', '%.10f' %LossPrint)
             Predict = sess.run (Accuracy, feed_dict = {X : ValidInputData, Y : ValidLabelData})
             print ('검사 데이터로 예상한 정확도', '%.3f' %(100*Predict), '%')
-
-
-# In[ ]:
-
-
-
-
