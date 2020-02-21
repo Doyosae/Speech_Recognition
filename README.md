@@ -20,6 +20,9 @@ Reference
 - Validation : 0.2  
 - 동일한 형태의 Convolution Network 사용  
   
+# 전처리된 데이터의 Plot 비교  
+[https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec.png]
+  
 #  학습 결과
 Mel Frequency   : 80%  
 Mel Spectrogram : 86%  
