@@ -21,7 +21,7 @@ Reference
 - 동일한 형태의 Convolution Network 사용  
 - 훈련 데이터는 360개, 검증 데이터는 15개로 Split  
   
-# 전처리된 데이터의 Plot 비교
+# 전처리된 데이터의 Plot 비교  
 ![Mel Frequency](https://github.com/Doyosae/Speech_Recognition/blob/master/image/MFCC.png)  
 ![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec.png)  
 - n_fft 등의 넘버를 크게 잡지 않아서, 픽셀 경계가 뚜렷히 보이는 것이 특징  
@@ -31,7 +31,7 @@ Reference
   
   
 #  학습 곡선 및 학습 결과  
-윗 사진이 MFCC learning curve, 아랫 사진이 Mel Spectrogram learning curve이다.
+윗 사진이 MFCC learning curve, 아랫 사진이 Mel Spectrogram learning curve이다.  
 ![Mel Freqeuncy](https://github.com/Doyosae/Speech_Recognition/blob/master/image/mfcc_learning.png)  
 ![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec_Learning.png)  
 Mel Frequency   : 80%  
@@ -40,4 +40,4 @@ Mel Spectrogram : 86%
 # 한계점 및 개선점  
 - 360개의 데이터셋은 모델의 성능을 높이기에 매우 부족한 데이터수  
 - 두 가지 방법을 생각해볼 수 있다. GAN으로 Data Augmentation를 또는 Few Shot Learning을 시도  
-- Test 데이터셋에 대해 가장 잘 일반화할 수 있는 적당한 Split은 몇인지 알아볼 필요성
+- Test 데이터셋에 대해 가장 잘 일반화할 수 있는 적당한 Split은 몇인지 알아볼 필요성  
