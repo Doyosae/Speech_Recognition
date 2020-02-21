@@ -19,10 +19,19 @@ Reference
 - Batch size : 8  
 - Validation : 0.2  
 - 동일한 형태의 Convolution Network 사용  
+- 훈련 데이터는 360개, 검증 데이터는 15개로 Split  
   
-# 전처리된 데이터의 Plot 비교  
-[https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec.png]
+# 전처리된 데이터의 Plot 비교
+![Mel Frequency](https://github.com/Doyosae/Speech_Recognition/blob/master/image/MFCC.png)  
+![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec.png)  
+- n_fft 등의 넘버를 크게 잡지 않아서, 픽셀 경계가 뚜렷히 보이는 것이 특징  
   
-#  학습 결과
+# 신경망 모델의 구조  
+![Model](https://github.com/Doyosae/Speech_Recognition/blob/master/image/Model.PNG)  
+  
+  
+#  학습 곡선 및 학습 결과  
+![Mel Freqeuncy](https://github.com/Doyosae/Speech_Recognition/blob/master/image/mfcc_learning.png)  
+![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec_Learning.png)  
 Mel Frequency   : 80%  
 Mel Spectrogram : 86%  
