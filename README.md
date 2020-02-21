@@ -31,7 +31,13 @@ Reference
   
   
 #  학습 곡선 및 학습 결과  
+윗 사진이 MFCC learning curve, 아랫 사진이 Mel Spectrogram learning curve이다.
 ![Mel Freqeuncy](https://github.com/Doyosae/Speech_Recognition/blob/master/image/mfcc_learning.png)  
 ![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec_Learning.png)  
 Mel Frequency   : 80%  
 Mel Spectrogram : 86%  
+  
+# 한계점 및 개선점  
+- 360개의 데이터셋은 모델의 성능을 높이기에 매우 부족한 데이터수  
+- 두 가지 방법을 생각해볼 수 있다. GAN으로 Data Augmentation를 또는 Few Shot Learning을 시도  
+- Test 데이터셋에 대해 가장 잘 일반화할 수 있는 적당한 Split은 몇인지 알아볼 필요성
