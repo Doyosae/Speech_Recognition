@@ -1,5 +1,5 @@
 # 문제 정의  
-알파벳 모음 a, e, i, o, u의 classification 구현, 그리고 구분하기 힘든 모음을 찾기  
+알파벳 모음 a, e, i, o, u의 classification 구현, 그리고 구분하기 힘든 모음을 무엇인지 판별  
 - 2020, 02, 22 개선사항  
   Tensorflow 1.14 코드를 Tensorflow 2.1.0 코드로 업데이트  
   의미가 모호할 수 있는 변수명 개선  
@@ -7,18 +7,20 @@
   
   
 # 데이터의 구성과 전처리  
-1명의 사람들이 a, e, i, o, u 알파벳 모음을 발음. 총 75명의 사람들이 녹음에 참여하여 발음 데이터 375개의 데이터를 구성  
-각 음성 데이터를 librosa 라이브러리에서 Mel Frequency Cepstral Coefficient 방법을 적용  
+1명의 사람이 a, e, i, o, u 알파벳 모음을 발음. 총 75명의 사람들이 녹음에 참여하여 발음 데이터 375개의 데이터를 구성  
+음성 데이터를 mel frequency cepstral coefficient 방법을 적용, .feature.mfcc 메서드를 사용  
+또 다른 전처리는 .feature.melspectorgram 메서드를 사용  
   Reference  
 - http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/  
 - https://medium.com/@jonathan_hui/speech-recognition-feature-extraction-mfcc-plp-5455f5a69dd9  
 - https://towardsdatascience.com/getting-to-know-the-mel-spectrogram-31bca3e2d9d0  
   
   
-# 전처리된 데이터의 Plot 비교  
+# 전처리된 데이터의 Plot 비교 (mfcc and melspectogram)
 ![Mel Frequency](https://github.com/Doyosae/Speech_Recognition/blob/master/image/MFCC.png)  
 ![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec.png)  
-- n_fft 등의 숫자를 크게 잡지 않아서, 픽셀 경계가 뚜렷히 보이는 것이 특징  
+- .feature.mfcc에서 n_mfcc는 mfcc 계수의 갯수, n_mfcc = 20으로 설정. 가장 많이 사용한느 옵션 범위 중 최솟값  
+- .feature.melspectogram에서 n_mels는 9로 설정. mfcc 결과값과의 배열 사이즈를 동일하게 하기 위한 값  
   
   
 # 모델의 사양과 학습 조건 그리고 구조  
