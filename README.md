@@ -36,7 +36,7 @@
   
   
 # 모델의 학습 곡선 및 학습 결과  
-윗 사진이 MFCC learning curve, 아랫 사진이 Mel Spectrogram learning curve이다.  
+위의 사진은 MFCC learning curve, 아래 사진은 Mel Spectrogram learning curve.  
 ![Mel Freqeuncy](https://github.com/Doyosae/Speech_Recognition/blob/master/image/mfcc_learning.png)  
 ![Mel Spectrogram](https://github.com/Doyosae/Speech_Recognition/blob/master/image/melspec_Learning.png)  
 - Mel Frequency   : 80%  
