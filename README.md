@@ -11,9 +11,9 @@
 음성 데이터를 mel frequency cepstral coefficient 방법을 적용, .feature.mfcc 메서드를 사용  
 또 다른 전처리는 .feature.melspectorgram 메서드를 사용  
   Reference  
-- http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/  
-- https://medium.com/@jonathan_hui/speech-recognition-feature-extraction-mfcc-plp-5455f5a69dd9  
-- https://towardsdatascience.com/getting-to-know-the-mel-spectrogram-31bca3e2d9d0  
+- [Reference 1](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)  
+- [Reference 2](https://medium.com/@jonathan_hui/speech-recognition-feature-extraction-mfcc-plp-5455f5a69dd9)  
+- [Reference 3](https://towardsdatascience.com/getting-to-know-the-mel-spectrogram-31bca3e2d9d0)  
   
   
 # 전처리된 데이터의 Plot 비교 (mfcc and melspectogram)
